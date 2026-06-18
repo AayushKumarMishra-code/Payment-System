@@ -212,6 +212,12 @@ body
     background-color: white !important;
     color: #8B5CF6 !important;
 }
+.brandLogo
+{
+    display: inline-flex;
+    align-items: baseline;
+    text-decoration: none;
+}
 #sadak
 {
     color: white;
