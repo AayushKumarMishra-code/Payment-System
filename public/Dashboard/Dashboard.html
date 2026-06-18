@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div id="sadak">SADAK</span><span id="pe">PE</div>
+        <div id="us">
+            <a href="">Home &nbsp;</a href="">
+            <a href=""> &nbsp;About Us </a href="">
+            <a href=""> &nbsp; Contact Us</a href="">
+        </div>
+        <div id="btns">
+            <button class="bi bi-person-circle" id="profile"> &nbsp;Profile &nbsp;</button>
+            <button class="bi bi-bell-fill" id="notification"></button>
+            <div id="profileMenu">
+                <button id="profileOption">Profile</button>
+                <button id="logoutOption">Logout</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="data">
+            <div><span id="wlcm">Welcome, </span><span id="username">User</span></div>
+            <div><span id="balance">Available Balance: </span><span id="amt"></span></div>
+        </section>
+        <div id="content">
+            <section id="actions">
+                <div>Payments & Transfers</div>
+                <div id="actionButtons">
+                    <button id="upi" class="selectedButton">UPI</button>
+                    <button id="accTrans" class="unselectedButton">Account Transfer</button>
+                    <button id="topup" class="unselectedButton">Top-up</button>
+                    <button id="bills" class="unselectedButton">Bills</button> <br>
+
+                    <div id="inputs">
+                        <input type="text" placeholder="Enter UPI ID" id="accDetail"> <br id="accDetailBreak">
+                        <input type="number" placeholder="Enter the amount to send" id="amtInput"> <br>
+                    </div>
+
+                    <div id="billsOptions">
+                        <button style="border-radius: 30%; padding: 3%; font-size: 60%; margin: 3% 1% 2% 1%">Mobile <br>
+                            Recharge</button>
+                        <button style="border-radius: 30%; padding: 3%; font-size: 60%; margin: 3% 1% 2% 1%">Wifi <br>
+                            Recharge</button>
+                        <button style="border-radius: 30%; padding: 3%; font-size: 60%; margin: 3% 1% 2% 1%">Electricity
+                            <br> Bill</button>
+                        <button style="border-radius: 30%; padding: 3%; font-size: 60%; margin: 3% 0% 2% 1%">Water <br>
+                            Bill</button>
+                    </div>
+                    <div id="message"></div>
+                    <button id="send" class="selectedButton">Send</button>
+                </div>
+            </section>
+            <section id="transactions">
+                <div id="recent">Recent Transactions</div>
+                <div id="rcntBox">
+                    <a class="recentTransaction"
+                        href="../Transaction-Page/Transaction.html?transaction=food-500">
+                        <div class="transactionInfo">
+                            <strong>Rahul Sharma</strong>
+                            <span>Food payment · 16 Jun 2026</span>
+                        </div>
+                        <span class="debitAmount">- ₹500</span>
+                    </a>
+                    <a class="recentTransaction"
+                        href="../Transaction-Page/Transaction.html?transaction=coffee-300">
+                        <div class="transactionInfo">
+                            <strong>Neha</strong>
+                            <span>Money debited · 14 Jun 2026</span>
+                        </div>
+                        <span class="debitAmount">- ₹300</span>
+                    </a>
+                    <a class="recentTransaction"
+                        href="../Transaction-Page/Transaction.html?transaction=credited-750">
+                        <div class="transactionInfo">
+                            <strong>Priya</strong>
+                            <span>Money credited · 18 Jun 2026</span>
+                        </div>
+                        <span class="creditAmount">+ ₹750</span>
+                    </a>
+                    <a class="recentTransaction"
+                        href="../Transaction-Page/Transaction.html?transaction=topup-1000">
+                        <div class="transactionInfo">
+                            <strong>Wallet Top-up</strong>
+                            <span>Added by Amit · 17 Jun 2026</span>
+                        </div>
+                        <span class="topupAmount">+ ₹1,000</span>
+                    </a>
+                </div>
+                <button id="veiw">View All</button>
+            </section>
+            <section id="monthSummary">
+                <div id="smryMessage" style="margin-top: -1%; margin-bottom: 0.5%;">This month's Summary</div>
+                <div id="summary">
+                    <div style="display: flex; justify-content: space-between;">Money Sent &nbsp;&nbsp; <span
+                            id="amtSent"></span></div>
+                    <hr style="margin: 1% -1.2% 1.5% -1.2%;">
+                    <div style="display: flex; justify-content: space-between;">Money Received &nbsp;&nbsp; <span
+                            id="amtReceived"></span></div>
+                    <hr style="margin: 1% -1.2% 1.5% -1.2%;">
+                    <div style="display: flex; justify-content: space-between;">Topups &nbsp;&nbsp; <span
+                            id="topups"></span></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="successToast">Money sent successfully</div>
+
+    <script src="../transactions-data.js"></script>
+    <script src="Dashboard.js"></script>
+</body>
+
+</html>
