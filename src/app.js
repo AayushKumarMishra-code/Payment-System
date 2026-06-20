@@ -16,4 +16,8 @@ app.use("/api/auth",authRouter);
 app.use("/api/transactions",transactionRouter);
 app.use("/api/notifications",notificationRouter);
 
+app.get("/", (req, res) => {
+  res.redirect("/Login-Page/")
+})
+
 export default app
