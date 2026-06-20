@@ -169,7 +169,7 @@ export const topUp = async (req, res) => {
       receiver: userId,
       amount,
       type: "credit",
-      note: "Account Topup",
+      note: "Account Top-up",
     })
 
     // topup success ka notification;
