@@ -36,13 +36,12 @@ const userSchema = new mongoose.Schema(
 )
 
 // password save karne se pehle hash karo - yeh middleware hai mongoose ka
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function () {
   // agar password change nahi hua toh dobara hash mat karo
-  if (!this.isModified("password")) return next()
+  if (!this.isModified("password")) return;
 
   // 10 salt rounds - standard hai yeh
   this.password = await bcrypt.hash(this.password, 10)
-  next()
 })
 
 // login ke time password check karne ka method
@@ -51,6 +50,6 @@ userSchema.methods.isPasswordCorrect = async function (rawPassword) {
   return await bcrypt.compare(rawPassword, this.password)
 }
 
-const User = mongoose.model("User", userSchema)
+const User = mongoose.model("User", userSchema);
 
 export default User
